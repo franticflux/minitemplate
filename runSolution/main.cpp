@@ -1,5 +1,5 @@
 #include <print>
 
 int main () {
-    std::print("Hello, world!");
+    std::print("Hello World!\n");
 }

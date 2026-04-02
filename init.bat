@@ -32,9 +32,19 @@ goto parse_args
 :: Always build into "build"
 set BUILD_DIR=build
 
-:: Clean and recreate build dir
-if exist %BUILD_DIR% rmdir /s /q %BUILD_DIR%
-mkdir %BUILD_DIR%
+:: Clean and recreate build dir but ask first!
+if exist %BUILD_DIR% (
+    echo Build directory exists: %BUILD_DIR%
+    set /p CONFIRM="Delete and recreate? (Y/N): "
+    if /i "%CONFIRM%"=="Y" (
+        rmdir /s /q %BUILD_DIR%
+        mkdir %BUILD_DIR%
+    ) else (
+        echo Skipping build directory cleanup.
+    )
+) else (
+    mkdir %BUILD_DIR%
+)
 
 :: Compiler setup
 if "%COMPILER%"=="clang" (

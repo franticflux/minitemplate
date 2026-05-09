@@ -10,4 +10,4 @@ runSolution <-- your main.exe is here.
 There are two files in the project root directory of some importance (I always run nvim from the project root):
 
 * __.clang-format__ mainly based on Stroustrup with some oldschool K&R formatting for good measure.
-* __compile_commands.json__ is created by init.bat (and is used by clangd/LSP in NeoVIM)
+* __compile_commands.json__ is copied to project root (and is used by clangd/LSP in NeoVIM)

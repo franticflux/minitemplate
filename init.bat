@@ -74,10 +74,5 @@ cmake -S . -B %BUILD_DIR% ^
   -DVCPKG_TARGET_TRIPLET=x64-windows-static ^
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
-:: Copy compile_commands.json to project root
-if exist %BUILD_DIR%\compile_commands.json (
-    copy /Y %BUILD_DIR%\compile_commands.json .
-)
-
 endlocal
 

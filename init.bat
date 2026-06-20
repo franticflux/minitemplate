@@ -36,7 +36,7 @@ set BUILD_DIR=build
 if exist %BUILD_DIR% (
     echo Build directory exists: %BUILD_DIR%
     set /p CONFIRM="Delete and recreate? (Y/N): "
-    if /i "%CONFIRM%"=="Y" (
+    if /i "!CONFIRM!"=="Y" (
         rmdir /s /q %BUILD_DIR%
         mkdir %BUILD_DIR%
     ) else (
